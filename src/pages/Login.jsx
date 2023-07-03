@@ -10,7 +10,7 @@ import { useDatabase } from '../context/DatabaseContext';
 export default function Login() {
     const [showPassword, setShowPassword] = useState(false)
     const [isRegister, setIsRegister] = useState(false)
-    const { readUser, addUser, setLoggedInUser } = useDatabase()
+    const { readUser, setLoggedInUser } = useDatabase()
     function togglePassword() {
         setShowPassword(!showPassword)
     }
@@ -24,18 +24,14 @@ export default function Login() {
         const email = event.target.elements.email.value;
         const password = event.target.elements.password.value
         readUser(email)
-            .then((userData) => {
-                userData ?
+           .then((userData) => {
+                userData ? 
                     (userData.password == password ?
-                        setLoggedInUser(userData):
-                        alert('Invalid Password, Try again!')) :
-
+                        setLoggedInUser(userData) :
+                        alert('Incorrect Password!')) :
                     alert('No such email, Register now?')
-
             })
-            .catch((error) => {
-                console.error('error reading user', error)
-            })
+           .catch()
     }
 
 

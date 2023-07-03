@@ -7,7 +7,11 @@ export default function AttendanceTracker() {
     const { loggedInUser } = useDatabase()
 
     return (<>
-        {loggedInUser ? <NavigationPanel/> : <Login/>}
+        {loggedInUser ? (<NavigationPanel/>)
+        
+        
+        
+        : <Login/>}
     </>
     )
 }

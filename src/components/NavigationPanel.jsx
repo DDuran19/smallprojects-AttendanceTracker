@@ -10,9 +10,9 @@ export function NavigationPanel() {
     return (<>
         <Navbar bg="dark" data-bs-theme="dark">
             <Container>
-                <Navbar.Brand href="#home">Attendance Tracker</Navbar.Brand>
+                <Navbar.Brand href="">Attendance Tracker</Navbar.Brand>
                 <Nav className="me-auto">
-                    <Nav.Link href="#home">Events</Nav.Link>
+                    <Nav.Link href="">Events</Nav.Link>
                     <Nav.Link href="#admin">Admin</Nav.Link>
                 </Nav>
                 <Navbar.Toggle />
